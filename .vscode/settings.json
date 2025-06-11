@@ -1,0 +1,11 @@
+{
+  "css.validate": false,
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html",
+    "javascript": "javascript",
+    "typescript": "typescript"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  }
+}
