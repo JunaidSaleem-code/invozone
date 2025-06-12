@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" rx="16" fill="#F5F5F5"/>
+  
+  <!-- Dashboard Elements -->
+  <rect x="40" y="40" width="320" height="220" rx="8" fill="white" stroke="#E0E0E0" stroke-width="2"/>
+  
+  <!-- Header -->
+  <rect x="60" y="60" width="120" height="24" rx="4" fill="#0051FF" fill-opacity="0.1"/>
+  <rect x="60" y="96" width="280" height="8" rx="4" fill="#E0E0E0"/>
+  <rect x="60" y="112" width="200" height="8" rx="4" fill="#E0E0E0"/>
+  
+  <!-- Chart -->
+  <path d="M60 200L140 160L220 180L300 140" stroke="#0051FF" stroke-width="2"/>
+  <circle cx="140" cy="160" r="4" fill="#0051FF"/>
+  <circle cx="220" cy="180" r="4" fill="#0051FF"/>
+  <circle cx="300" cy="140" r="4" fill="#0051FF"/>
+  
+  <!-- Stats -->
+  <rect x="60" y="220" width="80" height="20" rx="4" fill="#00A3FF" fill-opacity="0.1"/>
+  <rect x="160" y="220" width="80" height="20" rx="4" fill="#FF6B00" fill-opacity="0.1"/>
+  <rect x="260" y="220" width="80" height="20" rx="4" fill="#0051FF" fill-opacity="0.1"/>
+</svg> 

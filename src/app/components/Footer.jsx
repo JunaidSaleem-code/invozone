@@ -1,41 +1,84 @@
 export function Footer() {
+  const footerLinks = {
+    company: [
+      { label: "About Us", href: "/about" },
+      { label: "Careers", href: "/careers" },
+      { label: "Contact", href: "/contact" },
+      { label: "Blog", href: "/blog" }
+    ],
+    services: [
+      { label: "Product Engineering", href: "/services/product-engineering" },
+      { label: "Data & AI", href: "/services/data-ai" },
+      { label: "DevOps & CloudOps", href: "/services/devops" },
+      { label: "Emerging Tech", href: "/services/emerging-tech" }
+    ],
+    resources: [
+      { label: "Case Studies", href: "/case-studies" },
+      { label: "White Papers", href: "/resources/white-papers" },
+      { label: "Documentation", href: "/docs" },
+      { label: "FAQs", href: "/faqs" }
+    ],
+    legal: [
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
+      { label: "Cookie Policy", href: "/cookies" }
+    ]
+  };
+
   return (
-    <footer className="bg-gray-900 text-gray-300 py-16">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div>
-          <h3 className="text-white text-xl font-bold mb-4">InvoZone</h3>
-          <p className="text-gray-400 mb-4">
-            Future-driven software development consulting and product engineering services.
-          </p>
-          <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} InvoZone. All rights reserved.
-          </p>
+    <footer className="bg-gray-900 text-gray-300">
+      <div className="container-custom py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+          {/* Brand */}
+          <div className="lg:col-span-2">
+            <h2 className="text-2xl font-bold text-white mb-4">InvoZone</h2>
+            <p className="mb-6">
+              Software Development Consulting Company helping businesses transform through technology.
+            </p>
+            <div className="flex space-x-4">
+              {["Twitter", "LinkedIn", "GitHub", "Instagram"].map((social) => (
+                <a
+                  key={social}
+                  href={`https://${social.toLowerCase()}.com/invozone`}
+                  className="text-gray-400 hover:text-white transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {social}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Links */}
+          {Object.entries(footerLinks).map(([title, links]) => (
+            <div key={title}>
+              <h3 className="text-white font-semibold uppercase mb-4">
+                {title}
+              </h3>
+              <ul className="space-y-2">
+                {links.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-        <div>
-          <h4 className="text-white font-semibold mb-4">What We Do</h4>
-          <ul className="space-y-2">
-            <li><a href="#" className="hover:text-white">Product Engineering</a></li>
-            <li><a href="#" className="hover:text-white">Data & Artificial Intelligence</a></li>
-            <li><a href="#" className="hover:text-white">DevOps & CloudOps</a></li>
-            <li><a href="#" className="hover:text-white">Emerging Technologies</a></li>
-            <li><a href="#" className="hover:text-white">Blockchain & Web 3.0</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-white font-semibold mb-4">Who We Serve</h4>
-          <ul className="space-y-2">
-            <li><a href="#" className="hover:text-white">Startups</a></li>
-            <li><a href="#" className="hover:text-white">Enterprises</a></li>
-            <li><a href="#" className="hover:text-white">Rescue Projects</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-white font-semibold mb-4">Company</h4>
-          <ul className="space-y-2">
-            <li><a href="#" className="hover:text-white">About Us</a></li>
-            <li><a href="#" className="hover:text-white">Careers</a></li>
-            <li><a href="#" className="hover:text-white">Contact Us</a></li>
-          </ul>
+
+        <div className="mt-12 pt-8 border-t border-gray-800 text-sm text-gray-400">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p>© 2024 InvoZone. All rights reserved.</p>
+            <div className="mt-4 md:mt-0">
+              Made with ❤️ in Pakistan
+            </div>
+          </div>
         </div>
       </div>
     </footer>
