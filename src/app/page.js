@@ -6,6 +6,7 @@ import { Stats } from './components/Stats'
 import { WhyChooseUs } from './components/WhyChooseUs'
 import { ContactCTA } from './components/ContactCTA'
 import { SuccessStories } from './components/SuccessStories'
+import { Footer } from './components/Footer'
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <WhyChooseUs />
       <ContactCTA />
       <SuccessStories />
+      <Footer />
     </main>
   )
-} 
+}

@@ -10,7 +10,7 @@ export function Hero() {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="https://invozone.com/wp-content/uploads/2023/12/hero-video.mp4" type="video/mp4" />
+          <source src="/videos/hero-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         {/* Gradient Overlay */}

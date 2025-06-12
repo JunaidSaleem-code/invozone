@@ -1,15 +1,15 @@
 export function ClientLogos() {
   const logos = [
-    "https://invozone.com/wp-content/uploads/2023/12/client-1.png",
-    "https://invozone.com/wp-content/uploads/2023/12/client-2.png",
-    "https://invozone.com/wp-content/uploads/2023/12/client-3.png",
-    "https://invozone.com/wp-content/uploads/2023/12/client-4.png",
-    "https://invozone.com/wp-content/uploads/2023/12/client-5.png",
-    "https://invozone.com/wp-content/uploads/2023/12/client-6.png",
-    "https://invozone.com/wp-content/uploads/2023/12/client-7.png",
-    "https://invozone.com/wp-content/uploads/2023/12/client-8.png",
-    "https://invozone.com/wp-content/uploads/2023/12/client-9.png",
-    "https://invozone.com/wp-content/uploads/2023/12/client-10.png"
+    "/images/client-1.png",
+    "/images/client-2.png",
+    "/images/client-3.png",
+    "/images/client-4.png",
+    "/images/client-5.png",
+    "/images/client-6.png",
+    "/images/client-7.png",
+    "/images/client-8.png",
+    "/images/client-9.png",
+    "/images/client-10.png"
   ];
 
   return (
@@ -29,4 +29,4 @@ export function ClientLogos() {
       </div>
     </section>
   );
-} 
+}
