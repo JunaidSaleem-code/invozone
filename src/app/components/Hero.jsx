@@ -1,68 +1,70 @@
-export function Hero() {
+'use client'
+
+import { useState } from 'react'
+import Image from 'next/image'
+
+export default function Hero() {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false)
+
   return (
-    <section className="relative min-h-screen pt-20 flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="/videos/hero-video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
-      </div>
+    <div className="relative w-full min-h-screen bg-[#0A0A0A]">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster="/images/hero/hero-main.svg"
+        onCanPlayThrough={() => setIsVideoLoaded(true)}
+        className="absolute top-0 left-0 w-full h-full object-cover object-fit-cover z-0"
+        src="/videos/hero-video.mp4"
+      />
+      Overlay
+      <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
-        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+      <div className="relative z-20 flex flex-col justify-center items-start min-h-screen container px-4 pt-32 max-w-[800px] ">
+        {!isVideoLoaded && (
+          <div className="absolute inset-0 flex items-center justify-center z-30 text-white text-lg font-semibold">
+            Loading video...
+          </div>
+        )}
+        <span className="inline-block mb-4 px-3 py-1 border border-white rounded-full text-white text-sm font-semibold max-w-max">
           Software Development Consulting
-        </h1>
-        <h2 className="text-2xl md:text-3xl text-white/90 mb-8 font-light">
+        </span>
+        <h1 className="text-[56px] leading-[1.15] font-bold text-white mb-6">
           Future-Driven Innovations.
-        </h2>
-        <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
+        </h1>
+        <p className="text-[20px] leading-[1.5] text-white/80 mb-12 max-w-[600px]">
           Fostering Growth For Startups, Enterprises, And Innovators.
         </p>
-        
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="https://calendly.com/invozone"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-colors duration-200"
-          >
-            Book a 15 min Call
-          </a>
-          <a
-            href="#services"
-            className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white border-2 border-white rounded-lg hover:bg-white/10 transition-colors duration-200"
-          >
-            Explore Services
-          </a>
-        </div>
 
-        {/* Stats */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
-          <div>
-            <div className="text-4xl font-bold mb-2">400+</div>
-            <div className="text-lg text-white/80">Products Developed</div>
+        {/* CTA Button */}
+        <a
+          href="https://calendly.com/invozone"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative flex items-center gap-4 bg-[#0052CC] hover:bg-[#0043A7] transition-colors duration-300 rounded-full px-6 py-4 text-white font-semibold max-w-max"
+        >
+          <div className="flex items-center justify-center w-10 h-10 bg-white rounded-full">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-6 h-6 text-[#0052CC]"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 6v6l4 2"
+              />
+            </svg>
           </div>
-          <div>
-            <div className="text-4xl font-bold mb-2">300+</div>
-            <div className="text-lg text-white/80">Customers</div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold mb-2">120+</div>
-            <div className="text-lg text-white/80">Countries</div>
-          </div>
-        </div>
+          Book a 15 min Call
+        </a>
       </div>
-    </section>
-  );
+    </div>
+  )
 }

@@ -6,62 +6,12 @@ import { EngagementModels } from './components/EngagementModels';
 import { CaseStudies } from './components/CaseStudies';
 import { HireDeveloper } from './components/HireDeveloper';
 import { Footer } from './components/Footer';
+import Hero from './components/Hero';
 
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-gradient-to-r from-gray-50 to-gray-100 pt-16">
-        <div className="container-custom relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-fadeIn">
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900">
-                Software Development
-                <span className="block text-blue-600">Consulting</span>
-              </h1>
-              <p className="text-xl text-gray-600 max-w-2xl">
-                Future-Driven Innovations.
-                Fostering Growth For Startups, Enterprises, And Innovators.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="https://calendly.com/invozone" target="_blank" className="btn-primary">
-                  Book a 15 min Call
-                </Link>
-                <Link href="/services" className="btn-secondary">
-                  Explore Our Services
-                </Link>
-              </div>
-              <div className="pt-8">
-                <p className="text-gray-600 font-semibold">
-                  400+ Products Developed For 300+ Customers Across 120+ Countries
-                </p>
-              </div>
-            </div>
-            <div className="relative h-[500px] animate-fadeIn hidden lg:block">
-              <div className="absolute inset-0 bg-blue-600/10 rounded-lg"></div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-100 rounded-full opacity-50"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-50 rounded-full opacity-50"></div>
-        </div>
-      </section>
-
-      {/* Client Logos Section */}
-      <section className="py-16 bg-white">
-        <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
-            {[1, 2, 3, 4, 5].map((index) => (
-              <div key={index} className="w-32 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
-                <span className="text-gray-400 text-sm">Client {index}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     <Hero />
 
       {/* Services Section */}
       <Services />
@@ -132,4 +82,4 @@ export default function Home() {
       <Footer />
     </>
   );
-} 
+}

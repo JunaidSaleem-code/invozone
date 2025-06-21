@@ -1,3 +1,6 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
 export function Footer() {
   const footerLinks = {
     company: [
@@ -31,7 +34,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <h2 className="text-2xl font-bold text-white mb-4">InvoZone</h2>
+            <Link href="/" className="inline-block mb-6">
+              <Image
+                src="/images/logo/logo.svg"
+                alt="InvoZone Logo"
+                width={150}
+                height={40}
+                priority
+              />
+            </Link>
             <p className="mb-6">
               Software Development Consulting Company helping businesses transform through technology.
             </p>
@@ -59,12 +70,12 @@ export function Footer() {
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="hover:text-white transition-colors"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
